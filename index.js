@@ -7,7 +7,12 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const port = process.env.PORT || 5000;
 
 // middleware
-app.use(cors());
+app.use(
+    cors({
+        origin: ['http://localhost:5173', 'https://task-management-3d712.web.app'],
+        credentials: true,
+    }),
+  )
 app.use(express.json());
 
 //const { MongoClient, ServerApiVersion } = require("mongodb");
